@@ -1,7 +1,7 @@
-import React from "react";
-import { useState } from "react";
+import React from 'react';
+import { useState } from 'react';
 
-Square = ({value}) =>{
+Square = () =>{
 
   const [value,setValue]=useState(null);
   
