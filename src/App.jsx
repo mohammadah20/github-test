@@ -1,7 +1,7 @@
 import React from "react";
 
 
-export default MyBotton = ()=>{
+const MyBotton = ()=>{
   handleClick=()=>{
     alert('You Clicked Me!') 
   }
@@ -10,3 +10,5 @@ export default MyBotton = ()=>{
     <button onClick={handleClick}>Click here</button>
   )
 };
+
+export default  MyBotton
