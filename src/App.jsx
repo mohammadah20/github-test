@@ -1,14 +1,38 @@
 import React from "react";
+import { useState } from "react";
 
+Square = ({value}) =>{
 
-const MyBotton = ()=>{
+  const [value,setValue]=useState(null);
+  
   handleClick=()=>{
-    alert('You Clicked Me!') 
+    setValue('X');
   }
+  return (<button className="square" onClick={handleClick}>{value}</button>
 
-  return(
-    <button onClick={handleClick}>Click here</button>
-  )
-};
+)}
+const Board = ()=>{
 
-export default  MyBotton
+  <div>
+   <div className="board-row">
+    <Square/>
+    <Square/>
+    <Square/>
+
+   </div>
+   <div className="board-row">
+   <Square/>
+   <Square/>
+   <Square/>
+   </div>
+   <div className="board-row">
+    <Square/>
+    <Square/>
+    <Square/>
+   </div>
+   
+    
+  </div>
+}
+  
+export default  Board
