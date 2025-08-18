@@ -9,11 +9,11 @@ const Square = ({value,onSquareClick}) =>{
 const Board = ()=>{
   
   const  [xIsNext,setXIsNext] = useState(true);
-  const [square,setSquare]=useState(Array(9).fill(null));
+  const [squares,setSquares]=useState(Array(9).fill(null));
 
-  handleClick=(i)=>{
+  const handleClick=(i)=>{
   
-  if(square[i]|| calculateWinner(squares)){
+  if(squares[i]|| calculateWinner(squares)){
     return;
   }
 
@@ -22,7 +22,7 @@ const Board = ()=>{
   {xIsNext ?( nextSquares[i]="X")
     :(nextSquares[i]="O")
   }
-  setSquare(nextSquares);
+  setSquares(nextSquares);
   setXIsNext(!xIsNext);
 }
 
@@ -59,7 +59,7 @@ const Board = ()=>{
   
 }
 
-calculateWinner=(squares)=>{
+const calculateWinner=(squares)=>{
   const lines=[
     [0,1,2],
     [3,4,5],
@@ -74,7 +74,7 @@ calculateWinner=(squares)=>{
     const[a,b,c]=lines[i];
     
    if(squares[a]&&squares[a] === squares[b]&&squares[a] === squares[c]){
-    return square[a];
+    return squares[a];
     }
   }
     
