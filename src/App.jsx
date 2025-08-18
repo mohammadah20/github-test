@@ -1,8 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
-import Square from "./Square";
 
-Square = ({value,onSquareClick}) =>{
+const Square = ({value,onSquareClick}) =>{
 
   return <button className='square' onClick={onSquareClick}>{value}</button>;
 
