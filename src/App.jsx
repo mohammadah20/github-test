@@ -10,7 +10,8 @@ const Board = ()=>{
   
   const  [xIsNext,setXIsNext] = useState(true);
   const [square,setSquare]=useState(Array(9).fill(null));
-handleClick=(i)=>{
+
+  handleClick=(i)=>{
   
   if(square[i]|| calculateWinner(squares)){
     return;
@@ -36,6 +37,7 @@ handleClick=(i)=>{
 
   return(
     <div>
+      <div className='status'>{status}</div>
    <div className="board-row">
     <Square value={squares[0]} onSquareClick={()=>handleClick(0)}/>
     <Square value={squares[1]} onSquareClick={()=>handleClick(1)}/>
@@ -57,7 +59,7 @@ handleClick=(i)=>{
   
 }
 
-calculateWinner=()=>{
+calculateWinner=(squares)=>{
   const lines=[
     [0,1,2],
     [3,4,5],
